@@ -1,85 +1,27 @@
-Teams = [
-
-'Bandits’
-
-'Warriors’
-
-'Panthers’
-
-},
-
-{
 
 
-'Players’ = [{
-            'name’ = ‘James Arnold’
-            ‘guardian’ = ‘Liam Arnold and Matt Arnold’
-            'experience’= ‘Yes’
-            ‘height’= ‘40 inches’
-},
 
-{
+import constants
+from copy import deepcopy
 
+def processPlayers():
+    players = deepcopy(constants.Players)
+    for player in players:
+    #handle the data , convert to true /false, height to a number
+    print(player['guardian'])
 
-'name’ = ‘Clifford Smith’
-            ‘guardian’ = ‘Kyle Smith and Leo Smith’
-            'experience’= ‘Yes’
-            ‘height’= ‘42 inches’
+def assignPlayersToTeam():
 
-},
+    print("inside assign function")
 
-{
+    # divide players into two lists experienced or not, then assign them to a team evenly
 
 
-'name’ = ‘Liam Tremmonds’
-            ‘guardian’ = ‘Judah Tremmonds and Alfred Tremmonds’
-            'experience’= ‘No’
-            ‘height’= ‘41 inches’
-  
-  
-},
+def main():
+    print("Hello, welcome to the bball game")
+    processPlayers()
 
-{
+  assignPlayersToTeam()
 
-
-'name’ = ‘Ernest Harvey’
-            ‘guardian’ = ‘Jacob Harvey and Leon Harvey’
-            'experience’= ‘No’
-            ‘height’= ‘45 inches’
-
-},
-
-{
-
-
-'name’ = ‘Jerome Steel’
-            ‘guardian’ = ‘Lucas Steele and Derin Steele’
-            'experience’= ‘No’
-            ‘height’= ‘44 inches’
-
-},
-
-{
-  
-  'name’ = ‘Jerome Steel’
-            ‘guardian’ = ‘Lucas Steele and Derin Steele’
-            'experience’= ‘No’
-            ‘height’= ‘44 inches’
-  
-  },
-
-{
-  'name’ = ‘Tim Wilson’
-            ‘guardian’ = ‘Alfred Wilson and Jerry Wilson’
-            'experience’= ‘Yes’
-            ‘height’= ‘44 inches’
-  
-  
-},
-
-{
-  
-  'name’ = ‘Noah Clemmens’
-            ‘guardian’ = ‘Jacob Clemmens and Terry Clemmens’
-            'experience’= ‘No’
-            ‘height’= ‘44 inches’
+if __name__ == '__main__':
+    main()
