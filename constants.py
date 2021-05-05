@@ -6,19 +6,18 @@ Teams = [
 
 'Panthers’
 
-},
-
-{
+],
 
 
-'Players’ = [{
-            'name’ = ‘James Arnold’
-            ‘guardian’ = ‘Liam Arnold and Matt Arnold’
-            'experience’= ‘Yes’
-            ‘height’= ‘40 inches’
-},
 
-{
+Players = [{'name' : 'James Arnold',
+
+'guardian' : 'Jason Arnold',
+             'height' : '40 inches',
+             'experience' : 'Yes'}]
+],
+
+[
 
 
 'name’ = ‘Clifford Smith’
