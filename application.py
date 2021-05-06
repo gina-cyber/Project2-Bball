@@ -1,5 +1,7 @@
 import constants
 from copy import deepcopy
+#deepcopy constructs a new object and copies the data: https://docs.python.org/3/library/copy.html
+
 
 def processPlayers():
     players = deepcopy(constants.PLAYERS)
@@ -21,6 +23,10 @@ def processPlayers():
 
 def assignPlayersToTeam(players):
     teams = constants.TEAMS[:]
+    panthers = []
+    bandits = []
+    warriors = []
+
     for team_name in teams:
         print(team_name)
     print("inside assign function")
@@ -32,8 +38,18 @@ def assignPlayersToTeam(players):
         else:
             non_experienced_player.append(player)
       
-    print(experienced_player)
+    #print(experienced_player)
+    while experienced_player:
+        panthers.append(experienced_player.pop())
+        warriors.append(experienced_player.pop())
+        bandits.append(experienced_player.pop())
+    print(panthers)
 
+    while non_experienced_player:
+        panthers.append(non_experienced_player.pop())
+        warriors.append(non_experienced_player.pop())
+        bandits.append(non_experienced_player.pop())
+    print(panthers)
     
 
     # divide players into two lists experienced or not, then assign them to a team evenly
