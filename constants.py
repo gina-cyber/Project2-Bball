@@ -10,10 +10,12 @@ Teams = [
 
 
 
-Players = {'name' : 'James Arnold',
+Players = [{'name' : 'James Arnold',
 'guardian': 'Jason Arnold',
              'height' : '40 inches',
-             'experience' : 'Yes'}
+           #make an Integer
+             'experience' : 'Yes'
+          #make a boolean=false}
 },
 
 {
@@ -80,5 +82,5 @@ Players = {'name' : 'James Arnold',
   'name’ = {‘Noah Clemmens’
   ‘guardian’: ‘Jacob Clemmens and Terry Clemmens’
             'experience’= ‘No’
-            ‘height’= ‘44 inches’}
+            ‘height’= ‘44 inches’}]
 
