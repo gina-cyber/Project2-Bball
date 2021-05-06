@@ -5,6 +5,8 @@ def processPlayers():
     players = deepcopy(constants.Players)
     for player in players:
     #handle the data , convert to true /false, height to a number
+    James_Arnold_experience = True
+    int ("40")
     print(player['guardian'])
 
 def assignPlayersToTeam():
