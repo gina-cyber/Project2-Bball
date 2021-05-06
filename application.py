@@ -2,6 +2,8 @@ import constants
 from copy import deepcopy
 #deepcopy constructs a new object and copies the data: https://docs.python.org/3/library/copy.html
 def print_team_statistics(local_team):
+    experienced_players = len([player['experience'] for player in local_team if player['experience'] == True])
+    print(f'the number of experienced players = {experienced_players}')
     players_on_team = [player['name'] for player in local_team]
     height_on_team = [player['height'] for player in local_team]
     print(players_on_team)
@@ -67,6 +69,7 @@ def main():
     print("Hello, welcome to the bball game")
     new_player_list = processPlayers()
     assignPlayersToTeam(new_player_list)
+    
     
     #-panth, warrs, bands = assignPlayer()
 #-return panthers, warrios, bandits
