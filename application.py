@@ -7,9 +7,13 @@ def print_team_statistics(local_team):
     players_on_team = [player['name'] for player in local_team]
     height_on_team = [player['height'] for player in local_team]
     print(players_on_team)
+    #print('f the number of players on team = {players_on_team}
     print(height_on_team)
+    #print('f the height of players on team = {height_on_team}')
     print(len(players_on_team))
+    #print('f the full amount of all players on team = {len(players_pn_team)}
     print(sum(height_on_team)/len(players_on_team))
+    #print('f the sum of all heights of all players on teams divided by the full amount of players on teams ={sum(height_on_team)/len(players_on_team)}
     
 
 def processPlayers():
