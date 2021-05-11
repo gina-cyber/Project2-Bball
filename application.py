@@ -6,17 +6,19 @@ def print_team_statistics(local_team):
     print(f'the number of experienced players = {experienced_players}')
     players_on_team = [player['name'] for player in local_team]
     height_on_team = [player['height'] for player in local_team]
+    print('The names of my players are')
     print(players_on_team)
     #print('f the number of players on team = {players_on_team}
     ##print('f the number of total players is = {number_of_players_on_on_team}')
+    print('The heights of my players are') 
     print(height_on_team)
     #?print('f the height of players on team = {height_on_team}')
     #print(f'the average height of the team is {average_height_on_team}')
     ##total_height_on_team = [player['height'] for player in local_team]=len(players_on_team)
-    print(len(players_on_team))
-    #print('f the full amount of all players on team = {len(players_on_team)}
-    print(sum(height_on_team)/len(players_on_team))
-    #average_height_on_team=total_height_on_team/number_of_players_on_team
+    #print(len(players_on_team))
+    print(f'the full amount of all players on team = {len(players_on_team)}')
+    print (f'average_height_team = {sum(height_on_team)/len(players_on_team)}')
+    #print (f'average_height_on_team=total_height_on_team/number_of_players_on_team
     #Not Needed:print('f the sum of all heights of all players on teams divided by the full amount of players on teams ={sum(height_on_team)/len(players_on_team)}
     
 
@@ -24,17 +26,14 @@ def processPlayers():
     players = deepcopy(constants.PLAYERS)
     for player in players:
     #handle the data , convert to true /false, height to a number
-         print(player['guardians'])
-         if player['experience'] == 'YES':
+        if player['experience'] == 'YES':
             player['experience'] = True
-         else:
+        else:
             player['experience'] = False
-
-         print(player['experience'])
-         print(player['height'])
-         height = player['height'].split()
-         player['height'] = int(height[0])
-         print(player['height'])
+   
+        height = player['height'].split()
+        player['height'] = int(height[0])
+       
     return players
          
 
@@ -44,9 +43,7 @@ def assignPlayersToTeam(players):
     bandits = []
     warriors = []
 
-    for team_name in teams:
-        print(team_name)
-    print("inside assign function")
+    
     experienced_player = []
     non_experienced_player = []
     for player in players: 
@@ -60,25 +57,62 @@ def assignPlayersToTeam(players):
         panthers.append(experienced_player.pop())
         warriors.append(experienced_player.pop())
         bandits.append(experienced_player.pop())
-    print(panthers)
+   
 
     while non_experienced_player:
         panthers.append(non_experienced_player.pop())
         warriors.append(non_experienced_player.pop())
         bandits.append(non_experienced_player.pop())
     #print(panthers)
-    print_team_statistics(panthers)
-    print_team_statistics(warriors)
-    print_team_statistics(bandits)
+    #print_team_statistics(panthers)
+    #print_team_statistics(warriors)
+    #print_team_statistics(bandits)
+    return panthers, warriors, bandits
+  
+def displayMenuOptions(panthers, warriors, bandits):
+    while True:
+        menu()
+        command = input("Please enter the number for the COMMAND that you want >   ")
+        print()
+        if command == '1':
+            sub_menu()
+            option = input("Please enter the number for the OPTION that you want >   ")
+            if (option == '1'):
+              print_team_statistics(panthers)
+            elif (option == '2'):
+              print_team_statistics(warriors)
+            else:
+              print_team_statistics(bandits)
+              
+        elif command == '2':
+            print("Good bye.\n\n")
+            break
+        else:
+            print("\nThat is not a valid option. Please try again. \n")
+            continue
+            
+def menu():
+    print()
+    print('These are the options for the Basketball Stats game')
+    print("type 1 to display team_stats")
+    print("type 2 to display to quit")
 
+      
+    
+def sub_menu():
+    print("type 1 for panthers")
+    print("type 2 for bandits")
+    print("type 3 for warriors")
+
+
+   
     # divide players into two lists experienced or not, then assign them to a team evenly
 
 def main():
     print("Hello, welcome to the bball game")
     new_player_list = processPlayers()
-    assignPlayersToTeam(new_player_list)
-    
-    
+    panthers, warriors, bandits = assignPlayersToTeam(new_player_list)
+    displayMenuOptions(panthers, warriors, bandits)
     #-panth, warrs, bands = assignPlayer()
 #-return panthers, warrios, bandits
 
@@ -90,8 +124,8 @@ def main():
   
   #of players = 6
   #if you want to see average height type...
- 
 if __name__ == '__main__':
     main()
     
     #display team stats:name, total players/exp/non exp/average height of team
+    
