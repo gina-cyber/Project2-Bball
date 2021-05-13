@@ -2,6 +2,9 @@ import constants
 from copy import deepcopy
 #deepcopy constructs a new object and copies the data: https://docs.python.org/3/library/copy.html
 def print_team_statistics(local_team):
+    players_on_team = [player['name'] for player in local_team]
+    guardians_on_team = [player['guardians'] for player in local_team]
+    print(f'the total count of players on team = {len(players_on_team)}')
     experienced_players = len([player['experience'] for player in local_team if player['experience'] == True])
     print(f'the number of experienced players = {experienced_players}')
     players_on_team = [player['name'] for player in local_team]
@@ -21,9 +24,6 @@ def print_team_statistics(local_team):
     #print (f'average_height_on_team=total_height_on_team/number_of_players_on_team
     #Not Needed:print('f the sum of all heights of all players on teams divided by the full amount of players on teams ={sum(height_on_team)/len(players_on_team)}
 
-    guardians_on_team = [player['guardians'] for player in local_team]
-    print(f'the total count of players on team = {len(players_on_team)}')
-    
     inexperienced_players = len([player['experience'] for player in local_team if player['experience'] == False])
     print(f'the number of experienced players = {experienced_players}')
     print(f'the number of Inexperienced players = {inexperienced_players}')
@@ -137,25 +137,18 @@ def sub_menu():
     print("type 3 for warriors")
 
 
-   
-    # divide players into two lists experienced or not, then assign them to a team evenly
 
 def main():
     print("Hello, welcome to the bball game")
     new_player_list = processPlayers()
     panthers, warriors, bandits = assignPlayersToTeam(new_player_list)
     displayMenuOptions(panthers, warriors, bandits)
-    #panthwers, warriors, bandits = assignPlayer()
+    #panthers, warriors, bandits = assignPlayer()
     #return panthers, warriors, bandits
 
-#+displayStatistics(panthers) = panthers.count()
+    #displayStatistics(panthers) = panthers.count()
 
-   #how many exp players on each team =
-  #for every player, how many team
-  #true
   
-  #of players = 6
-  #if you want to see average height type...
 if __name__ == '__main__':
     main()
     
