@@ -117,13 +117,7 @@ def displayMenuOptions(panthers, warriors, bandits):
               print("TEAM name: Bandits")
               print_team_statistics(bandits)
 
-            if (option == '1'):
-              print_team_statistics(panthers)
-            elif (option == '2'):
-              print_team_statistics(warriors)
-            else:
-              print_team_statistics(bandits)
-              
+                          
         elif command == '2':
             print("Good bye.\n\n")
             break
