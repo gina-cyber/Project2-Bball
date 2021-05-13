@@ -20,7 +20,31 @@ def print_team_statistics(local_team):
     print (f'average_height_team = {sum(height_on_team)/len(players_on_team)}')
     #print (f'average_height_on_team=total_height_on_team/number_of_players_on_team
     #Not Needed:print('f the sum of all heights of all players on teams divided by the full amount of players on teams ={sum(height_on_team)/len(players_on_team)}
-    
+
+    def print_team_statistics(local_team):
+    players_on_team = [player['name'] for player in local_team]
+    guardians_on_team = [player['guardians'] for player in local_team]
+    print(f'the total count of players on team = {len(players_on_team)}')
+    experienced_players = len([player['experience'] for player in local_team if player['experience'] == True])
+    inexperienced_players = len([player['experience'] for player in local_team if player['experience'] == False])
+    print(f'the number of experienced players = {experienced_players}')
+    print(f'the number of Inexperienced players = {inexperienced_players}')
+    height_on_team = [player['height'] for player in local_team]
+    height_on_team_in_strings = [str(player['height']) for player in local_team]
+    print('The names of my players are')
+    print(",".join(players_on_team))
+    print('The guardians of my players are')
+    print(",".join(guardians_on_team))
+    print (f'average_height_team = {sum(height_on_team)/len(players_on_team)}')
+    print()
+    print("The details of the players are:")
+    for a_player in local_team:
+      print("player name: " + a_player['name'])
+      print("guardian: " + a_player['guardians'])
+      print("height:" + str(a_player['height']))
+      print()
+
+
 
 def processPlayers():
     players = deepcopy(constants.PLAYERS)
@@ -84,6 +108,16 @@ def displayMenuOptions(panthers, warriors, bandits):
             sub_menu()
             option = input("Please enter the number for the OPTION that you want >   ")
             if (option == '1'):
+              print("TEAM name: Panthers")
+              print_team_statistics(panthers)
+            elif (option == '2'):
+              print("TEAM name: Warriors")
+              print_team_statistics(warriors)
+            else:
+              print("TEAM name: Bandits")
+              print_team_statistics(bandits)
+
+            if (option == '1'):
               print_team_statistics(panthers)
             elif (option == '2'):
               print_team_statistics(warriors)
@@ -119,8 +153,8 @@ def main():
     new_player_list = processPlayers()
     panthers, warriors, bandits = assignPlayersToTeam(new_player_list)
     displayMenuOptions(panthers, warriors, bandits)
-    #-panth, warrs, bands = assignPlayer()
-#-return panthers, warrios, bandits
+    #panthwers, warriors, bandits = assignPlayer()
+    #return panthers, warriors, bandits
 
 #+displayStatistics(panthers) = panthers.count()
 
