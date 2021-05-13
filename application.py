@@ -21,11 +21,9 @@ def print_team_statistics(local_team):
     #print (f'average_height_on_team=total_height_on_team/number_of_players_on_team
     #Not Needed:print('f the sum of all heights of all players on teams divided by the full amount of players on teams ={sum(height_on_team)/len(players_on_team)}
 
-    def print_team_statistics(local_team):
-    players_on_team = [player['name'] for player in local_team]
     guardians_on_team = [player['guardians'] for player in local_team]
     print(f'the total count of players on team = {len(players_on_team)}')
-    experienced_players = len([player['experience'] for player in local_team if player['experience'] == True])
+    
     inexperienced_players = len([player['experience'] for player in local_team if player['experience'] == False])
     print(f'the number of experienced players = {experienced_players}')
     print(f'the number of Inexperienced players = {inexperienced_players}')
