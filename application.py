@@ -51,6 +51,12 @@ def assignPlayersToTeam(players):
             experienced_player.append(player)
         else:
             non_experienced_player.append(player)
+            
+    inexperienced_players = []
+    #count the inexperienced, then display
+    inexperienced_players = len([player['experience'] for player in local_team if player['experience'] == False])
+    print(f'the number of Inexperienced players = {inexperienced_players}')
+
       
     #print(experienced_player)
     while experienced_player:
