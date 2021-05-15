@@ -1,6 +1,6 @@
 import constants
 from copy import deepcopy
-#deepcopy constructs a new object and copies the data: https://docs.python.org/3/library/copy.html
+#deepcopy constructs a new object and copies the data:https://docs.python.org/3/library/copy.html
 
 def print_team_statistics(local_team):
     players_on_team = [player['name'] for player in local_team]
@@ -34,7 +34,22 @@ def processPlayers():
         else:
             player['experience'] = False
         height = player['height'].split()
-player)
+        player['height'] = int(height[0])
+    return players
+
+
+
+def assignPlayersToTeam(players):
+    teams = constants.TEAMS[:]
+    panthers = []
+    bandits = []
+    warriors = []
+
+    experienced_player = []
+    non_experienced_player = []
+    for player in players:
+        if player['experience'] == True:
+            experienced_player.append(player)
         else:
             non_experienced_player.append(player)
            
@@ -46,11 +61,8 @@ player)
         panthers.append(non_experienced_player.pop())
         warriors.append(non_experienced_player.pop())
         bandits.append(non_experienced_player.pop())
-    #print(panthers)
-    #print_team_statistics(panthers)
-    #print_team_statistics(warriors)
-    #print_team_statistics(bandits)
     return panthers, warriors, bandits
+
 
 def displayMenuOptions(panthers, warriors, bandits):
     while True:
@@ -75,7 +87,7 @@ def displayMenuOptions(panthers, warriors, bandits):
         else:
             print("\nThat is not a valid option. Please try again. \n")
             continue
-           
+
 def menu():
     print()
     print('These are the options for the Basketball Stats game')
@@ -95,4 +107,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
