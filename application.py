@@ -96,8 +96,8 @@ def menu():
 
 def sub_menu():
     print("type 1 for panthers")
-    print("type 2 for bandits")
-    print("type 3 for warriors")
+    print("type 2 for warriors")
+    print("type 3 for bandits")
 
 def main():
     print("Hello, welcome to the bball game")
